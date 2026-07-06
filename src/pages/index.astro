@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Header } from "../components/Header";
+import { Hero } from "../components/Hero";
+import { Audience } from "../components/Audience";
+import { Activities } from "../components/Activities";
+import { Interests } from "../components/Interests";
+import { RecentPosts } from "../components/RecentPosts";
+import { Join } from "../components/Join";
+import { Footer } from "../components/Footer";
+import {
+  activities,
+  audienceCards,
+  interests,
+  joinSteps,
+  navItems,
+  recentPosts,
+} from "../data/landing";
+---
+
+<BaseLayout
+  title="쿠러그 | 경희대학교 중앙 IT 동아리"
+  description="처음이어도, 전공이 달라도, 함께 배우고 만드는 경희대학교 중앙 IT 동아리 쿠러그."
+>
+  <Header navItems={navItems} />
+  <main>
+    <Hero />
+    <Audience cards={audienceCards} />
+    <Activities activities={activities} />
+    <Interests interests={interests} />
+    <RecentPosts posts={recentPosts} />
+    <Join steps={joinSteps} />
+  </main>
+  <Footer />
+  <script src="../scripts/landing.ts"></script>
+</BaseLayout>
