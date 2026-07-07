@@ -180,7 +180,7 @@ button {
 }
 
 .hero-lead {
-  max-width: 520px;
+  max-width: 760px;
   margin: 28px 0 0;
   font-size: clamp(21px, 3vw, 32px);
   font-weight: 800;
@@ -473,22 +473,69 @@ button {
 
 .interest-shell {
   display: grid;
-  gap: 24px;
+  gap: 18px;
 }
 
-.interest-description {
-  min-height: 70px;
+.interest-card p,
+.interest-cta p {
   margin: 0;
-  padding: 22px 24px;
+  line-height: 1.7;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.interest-card {
+  min-height: 220px;
+  padding: 22px;
   border: 2px solid var(--color-gray);
-  border-top: 6px solid var(--color-primary);
+  background: var(--color-white);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.interest-card:hover {
+  border-color: var(--color-primary);
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--color-gray);
+}
+
+.interest-card span {
+  display: block;
+  width: 34px;
+  height: 12px;
+  margin-bottom: 26px;
+  background: var(--color-primary);
+  box-shadow: 14px 10px 0 var(--color-sky);
+}
+
+.interest-card h3 {
+  margin: 0 0 10px;
+  color: var(--color-black);
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.interest-card p,
+.interest-cta p {
+  color: #4b4b4b;
+}
+
+.interest-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 22px;
+  border: 2px solid var(--color-gray);
   background: #f7f7f7;
-  font-size: 18px;
-  transition: opacity 140ms ease, transform 140ms ease;
 }
 
 .interest-link {
-  justify-self: start;
+  flex: 0 0 auto;
 }
 
 .text-link {
@@ -647,7 +694,8 @@ button {
 
   .hero,
   .join-section,
-  .activity-panel {
+  .activity-panel,
+  .interest-shell {
     grid-template-columns: 1fr;
   }
 
@@ -661,7 +709,8 @@ button {
 
   .audience-grid,
   .post-grid,
-  .join-steps {
+  .join-steps,
+  .interest-grid {
     grid-template-columns: 1fr;
   }
 
@@ -687,6 +736,11 @@ button {
 
   .footer-copy {
     text-align: left;
+  }
+
+  .interest-cta {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
