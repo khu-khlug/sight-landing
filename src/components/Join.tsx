@@ -13,10 +13,10 @@ export function Join({ steps }: JoinProps) {
       <div className="join-copy">
         <span className="section-marker" aria-hidden="true" />
         <p className="eyebrow">JOIN</p>
-        <h2 id="join-title">쿠러그에서 함께 시작해요</h2>
+        <h2 id="join-title">함께 시작해요</h2>
         <p>
-          경희대학교 학생이라면 온라인 신청 후 검토와 면접 절차를 거쳐 활동을 시작할 수 있습니다. 궁금한 점은
-          이메일로 문의해주세요.
+          경희대학교 학생이라면 온라인 신청 후 검토와 면접 절차를 거쳐 활동을 시작할 수 있습니다.
+          궁금한 점은 이메일로 문의해주세요.
         </p>
         <div className="join-actions">
           <a className="button button-primary" href="https://khlug.org/join">

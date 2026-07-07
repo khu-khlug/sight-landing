@@ -13,7 +13,7 @@ export function Audience({ cards }: AudienceProps) {
       <div className="section-heading">
         <span className="section-marker" aria-hidden="true" />
         <p className="eyebrow">WHO CAN JOIN</p>
-        <h2 id="audience-title">쿠러그는 이런 사람에게 열려 있어요</h2>
+        <h2 id="audience-title">이런 사람에게 열려 있어요</h2>
       </div>
       <div className="audience-grid">
         {cards.map((card) => (
