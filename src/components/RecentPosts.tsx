@@ -18,9 +18,14 @@ export function RecentPosts({ posts }: RecentPostsProps) {
           <p className="eyebrow">RECENT</p>
           <h2 id="recent-title">최근 활동</h2>
         </div>
-        <a className="text-link" href="https://hello.khlug.org/">
-          Hello 블로그 보기
-        </a>
+        <div className="section-actions">
+          <a className="text-link" href="https://hello.khlug.org/">
+            Hello 블로그 보기
+          </a>
+          <a className="text-link" href="https://www.instagram.com/khu_khlug">
+            Instagram 보기
+          </a>
+        </div>
       </div>
       <div className="post-grid">
         {posts.map((post) => (

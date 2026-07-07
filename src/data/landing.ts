@@ -51,19 +51,6 @@ export const activities = [
   },
 ];
 
-export const interests = [
-  { label: "웹/앱", description: "서비스를 만들고 배포하는 전 과정을 다룹니다." },
-  { label: "AI/머신러닝", description: "데이터와 모델을 활용해 문제를 해결합니다." },
-  { label: "보안/해킹", description: "시스템과 데이터를 안전하게 지키는 기술을 탐구합니다." },
-  { label: "게임/VR", description: "인터랙티브한 경험과 실시간 그래픽을 실험합니다." },
-  { label: "IoT/로봇", description: "소프트웨어가 현실 세계와 만나는 지점을 만듭니다." },
-  { label: "알고리즘", description: "문제를 명확하게 모델링하고 효율적으로 해결합니다." },
-  { label: "UX/UI", description: "사용자가 이해하고 쓰기 쉬운 인터페이스를 설계합니다." },
-  { label: "데이터 사이언스", description: "데이터를 읽고 분석해 의미 있는 결론을 찾습니다." },
-  { label: "클라우드/DB", description: "서비스를 안정적으로 운영하기 위한 기반을 다룹니다." },
-  { label: "네트워크", description: "컴퓨터와 서비스가 연결되는 원리를 이해합니다." },
-];
-
 export const recentPosts = [
   {
     category: "보도자료",

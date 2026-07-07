@@ -5,28 +5,79 @@ type Activity = {
   body: string;
 };
 
-type Interest = {
-  label: string;
-  description: string;
-};
-
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 document.querySelectorAll<HTMLElement>("[data-cube-field]").forEach((field) => {
   if (prefersReducedMotion) return;
 
-  field.addEventListener("pointermove", (event) => {
-    const rect = field.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-    field.style.setProperty("--pointer-x", x.toFixed(3));
-    field.style.setProperty("--pointer-y", y.toFixed(3));
+  const cubes = [...field.querySelectorAll<HTMLElement>(".cube")];
+  let resetTimer: number | undefined;
+
+  const clearCubes = () => {
+    window.clearTimeout(resetTimer);
+    cubes.forEach((cube) => {
+      cube.classList.remove("is-active", "is-pushed");
+      cube.style.setProperty("--cube-x", "0");
+      cube.style.setProperty("--cube-y", "0");
+      cube.style.setProperty("--push-x", "0px");
+      cube.style.setProperty("--push-y", "0px");
+    });
+  };
+
+  const activateCube = (activeCube: HTMLElement, autoReset = false) => {
+    window.clearTimeout(resetTimer);
+
+    const activeRect = activeCube.getBoundingClientRect();
+    const activeCenterX = activeRect.left + activeRect.width / 2;
+    const activeCenterY = activeRect.top + activeRect.height / 2;
+    const pushDistance = window.matchMedia("(max-width: 560px)").matches ? 14 : 18;
+
+    cubes.forEach((cube) => {
+      cube.classList.toggle("is-active", cube === activeCube);
+      cube.classList.toggle("is-pushed", cube !== activeCube);
+
+      if (cube === activeCube) return;
+
+      const rect = cube.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const deltaX = centerX - activeCenterX;
+      const deltaY = centerY - activeCenterY;
+      const length = Math.hypot(deltaX, deltaY) || 1;
+
+      cube.style.setProperty("--push-x", `${((deltaX / length) * pushDistance).toFixed(1)}px`);
+      cube.style.setProperty("--push-y", `${((deltaY / length) * pushDistance).toFixed(1)}px`);
+    });
+
+    if (autoReset) {
+      resetTimer = window.setTimeout(clearCubes, 1400);
+    }
+  };
+
+  cubes.forEach((cube) => {
+    cube.addEventListener("pointerenter", () => {
+      activateCube(cube);
+    });
+
+    cube.addEventListener("pointerdown", () => {
+      activateCube(cube, true);
+    });
+
+    cube.addEventListener("pointermove", (event) => {
+      const rect = cube.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+      cube.style.setProperty("--cube-x", x.toFixed(3));
+      cube.style.setProperty("--cube-y", y.toFixed(3));
+    });
+
+    cube.addEventListener("pointerleave", () => {
+      cube.style.setProperty("--cube-x", "0");
+      cube.style.setProperty("--cube-y", "0");
+    });
   });
 
-  field.addEventListener("pointerleave", () => {
-    field.style.setProperty("--pointer-x", "0");
-    field.style.setProperty("--pointer-y", "0");
-  });
+  field.addEventListener("pointerleave", clearCubes);
 });
 
 document.querySelectorAll<HTMLElement>("[data-activity-tabs]").forEach((root) => {
@@ -54,31 +105,6 @@ document.querySelectorAll<HTMLElement>("[data-activity-tabs]").forEach((root) =>
         title.textContent = next.title;
         body.textContent = next.body;
         content.classList.remove("is-switching");
-      }, 120);
-    });
-  });
-});
-
-document.querySelectorAll<HTMLElement>("[data-interest-picker]").forEach((root) => {
-  const dataElement = root.querySelector<HTMLScriptElement>("[data-interest-data]");
-  const buttons = [...root.querySelectorAll<HTMLButtonElement>("[data-interest-label]")];
-  const description = root.querySelector<HTMLElement>("[data-interest-description]");
-
-  if (!dataElement || !description) return;
-
-  const interests = JSON.parse(dataElement.textContent || "[]") as Interest[];
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const next = interests.find((interest) => interest.label === button.dataset.interestLabel);
-      if (!next) return;
-
-      buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-      description.classList.add("is-switching");
-
-      window.setTimeout(() => {
-        description.textContent = next.description;
-        description.classList.remove("is-switching");
       }, 120);
     });
   });
