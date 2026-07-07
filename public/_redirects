@@ -1,2 +1,5 @@
+/_astro/* /_astro/:splat 200
+/favicon.svg /favicon.svg 200
+/robots.txt /robots.txt 200
 /:path https://before.khlug.org/:path 301
 /:path/* https://before.khlug.org/:path/:splat 301
