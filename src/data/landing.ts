@@ -1,7 +1,7 @@
 export const navItems = [
   { label: "소개", href: "#audience" },
   { label: "활동", href: "#activities" },
-  { label: "Hello", href: "#recent" },
+  { label: "활동 기록", href: "#recent" },
   { label: "가입 신청", href: "#join", variant: "primary" },
 ];
 
@@ -70,11 +70,4 @@ export const recentPosts = [
     date: "2024.05.10",
     href: "https://hello.khlug.org/104426",
   },
-];
-
-export const joinSteps = [
-  { title: "온라인 신청", body: "가입 신청 페이지에서 기본 정보를 제출합니다." },
-  { title: "검토", body: "제출된 내용을 바탕으로 활동 의지와 관심사를 확인합니다." },
-  { title: "면접", body: "간단한 대화를 통해 활동 방향을 맞춰봅니다." },
-  { title: "회원 등록", body: "절차가 끝나면 쿠러그 활동을 시작합니다." },
 ];

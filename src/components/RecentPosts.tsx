@@ -15,8 +15,8 @@ export function RecentPosts({ posts }: RecentPostsProps) {
       <div className="section-heading section-heading-row">
         <div>
           <span className="section-marker" aria-hidden="true" />
-          <p className="eyebrow">RECENT</p>
-          <h2 id="recent-title">최근 활동</h2>
+          <p className="eyebrow">RECORDS</p>
+          <h2 id="recent-title">활동 기록</h2>
         </div>
         <div className="section-actions">
           <a className="text-link" href="https://hello.khlug.org/">
