@@ -27,12 +27,12 @@ export function Interests() {
       <div className="section-heading">
         <span className="section-marker" aria-hidden="true" />
         <p className="eyebrow">FIELDS</p>
-        <h2 id="interests-title">관심 분야가 다양해도 괜찮아요</h2>
+        <h2 id="interests-title">무엇에 관심이 있으신가요?</h2>
       </div>
       <div className="interest-shell">
         <p className="interest-description">
-          쿠러그의 회원은 아래 14개 관심 분야 중 하나 이상을 바탕으로 스터디, 프로젝트,
-          세미나를 함께 만들어갑니다.
+          쿠러그 회원은 아래 14개 관심 분야 중 하나 이상을 기반으로 스터디, 프로젝트,
+          세미나를 함께 꾸려나갑니다.
         </p>
         <div className="interest-grid" aria-label="쿠러그 14개 관심 분야">
           {interestGroups.map((interest) => (
