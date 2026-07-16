@@ -1,7 +1,12 @@
-export const navItems = [
+export const navItems: Array<{
+  label: string;
+  href: string;
+  variant?: "primary" | "login";
+}> = [
   { label: "소개", href: "#audience" },
   { label: "활동", href: "#activities" },
   { label: "활동 기록", href: "#recent" },
+  { label: "로그인", href: "https://app.khlug.org", variant: "login" },
   { label: "가입 신청", href: "#join", variant: "primary" },
 ];
 

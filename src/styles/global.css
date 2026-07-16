@@ -99,6 +99,20 @@ button {
 .site-nav {
   display: flex;
   align-items: center;
+  gap: 16px;
+}
+
+.nav-menu,
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  gap: 6px;
+}
+
+.nav-actions {
   gap: 6px;
 }
 
@@ -117,6 +131,10 @@ button {
 .nav-link:focus-visible {
   border-color: var(--color-primary);
   outline: none;
+}
+
+.nav-link-login {
+  border-color: var(--color-gray);
 }
 
 .nav-link-primary {
@@ -804,7 +822,7 @@ button {
     font-size: 20px;
   }
 
-  .site-nav .nav-link:not(.nav-link-primary) {
+  .nav-menu {
     display: none;
   }
 
