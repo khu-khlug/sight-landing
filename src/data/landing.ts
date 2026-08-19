@@ -58,21 +58,21 @@ export const activities = [
 
 export const recentPosts = [
   {
-    category: "해커톤",
-    title: "[보도자료] ‘농업의 기술화’ 주제로 AI·SW 해커톤 열려",
-    date: "2025.05.10",
-    href: "https://hello.khlug.org/109940",
+    category: "세미나",
+    title: "[2026-1 세미나: 먼저 말하기] 오픈소스에 기여해보자",
+    date: "2026.06.23",
+    href: "https://hello.khlug.org/117531",
   },
   {
-    category: "해커톤",
-    title: "[보도자료] ‘환경과 소프트웨어’ 주제로 경희대학교 SW 해커톤 열려",
-    date: "2024.05.10",
-    href: "https://hello.khlug.org/105312",
+    category: "세미나",
+    title: "[2026-1 세미나: 먼저 말하기] 게임 만들며 익히는 바이브코딩",
+    date: "2026.06.23",
+    href: "https://hello.khlug.org/117530",
   },
   {
-    category: "해커톤",
-    title: "KHUTHON 2024",
-    date: "2024.05.10",
-    href: "https://hello.khlug.org/104426",
+    category: "세미나",
+    title: "[2026-1 세미나: 먼저 말하기] WASM 스터디",
+    date: "2026.06.23",
+    href: "https://hello.khlug.org/117529",
   },
 ];
