@@ -1,12 +1,7 @@
-interface Post {
-  category: string;
-  title: string;
-  date: string;
-  href: string;
-}
+import type { RecentPost } from "../lib/recent-posts";
 
 interface RecentPostsProps {
-  posts: Post[];
+  posts: RecentPost[];
 }
 
 export function RecentPosts({ posts }: RecentPostsProps) {

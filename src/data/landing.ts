@@ -55,24 +55,3 @@ export const activities = [
     body: "보안, 웹, AI 등 관심 분야를 정해 더 깊게 파고드는 흐름을 만듭니다.",
   },
 ];
-
-export const recentPosts = [
-  {
-    category: "세미나",
-    title: "[2026-1 세미나: 먼저 말하기] 오픈소스에 기여해보자",
-    date: "2026.06.23",
-    href: "https://hello.khlug.org/117531",
-  },
-  {
-    category: "세미나",
-    title: "[2026-1 세미나: 먼저 말하기] 게임 만들며 익히는 바이브코딩",
-    date: "2026.06.23",
-    href: "https://hello.khlug.org/117530",
-  },
-  {
-    category: "세미나",
-    title: "[2026-1 세미나: 먼저 말하기] WASM 스터디",
-    date: "2026.06.23",
-    href: "https://hello.khlug.org/117529",
-  },
-];
