@@ -12,8 +12,10 @@ import {
   activities,
   audienceCards,
   navItems,
-  recentPosts,
 } from "../data/landing";
+import { getRecentPosts } from "../lib/recent-posts";
+
+const recentPosts = await getRecentPosts();
 ---
 
 <BaseLayout
